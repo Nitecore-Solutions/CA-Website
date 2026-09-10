@@ -54,24 +54,24 @@ export default function Home() {
       {/* Top Bar */}
       <div className="bg-blue-900 text-white py-2">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-2 md:gap-0">
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
-              <a href="tel:+919582549263" className="flex items-center gap-2 hover:text-orange-400 transition">
-                <Phone className="w-4 h-4" /><span>+91-9582549263</span>
+          <div className="flex flex-wrap justify-center md:justify-between items-center text-xs md:text-sm gap-x-4 gap-y-1">
+            <div className="flex items-center gap-x-4 flex-wrap justify-center gap-y-1">
+              <a href="tel:+919582549263" className="flex items-center gap-1.5 hover:text-orange-400 transition">
+                <Phone className="w-3 h-3 flex-shrink-0" /><span>+91-9582549263</span>
               </a>
-              <a href="tel:+917290000757" className="flex items-center gap-2 hover:text-orange-400 transition">
-                <Phone className="w-4 h-4" /><span>+91-7290000757</span>
+              <a href="tel:+917290000757" className="flex items-center gap-1.5 hover:text-orange-400 transition">
+                <Phone className="w-3 h-3 flex-shrink-0" /><span>+91-7290000757</span>
               </a>
             </div>
-            <a href="mailto:cachandanvarshney@gmail.com" className="flex items-center gap-2 hover:text-orange-400 transition">
-              <Mail className="w-4 h-4" /><span>cachandanvarshney@gmail.com</span>
+            <a href="mailto:cachandanvarshney@gmail.com" className="hidden sm:flex items-center gap-1.5 hover:text-orange-400 transition">
+              <Mail className="w-3 h-3 flex-shrink-0" /><span>cachandanvarshney@gmail.com</span>
             </a>
           </div>
         </div>
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white shadow-md sticky top-0 z-50">
+      <nav className="bg-white shadow-md sticky top-0 z-50 w-full">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center gap-2 md:gap-3">
@@ -149,14 +149,14 @@ export default function Home() {
                 </div>
               </Animate>
               <Animate direction="up" delay={0.7}>
-                <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {stats.map((stat, i) => (
-                    <div key={i} className="text-center">
-                      <div className="flex justify-center mb-2 text-orange-400">{stat.icon}</div>
-                      <div className="text-2xl md:text-3xl font-bold">
+                    <div key={i} className="text-center px-1">
+                      <div className="flex justify-center mb-1 text-orange-400">{stat.icon}</div>
+                      <div className="text-xl md:text-3xl font-bold">
                         <CountUp target={stat.number} suffix={stat.suffix} />
                       </div>
-                      <div className="text-xs text-gray-300">{stat.label}</div>
+                      <div className="text-xs text-gray-300 leading-tight">{stat.label}</div>
                     </div>
                   ))}
                 </div>
