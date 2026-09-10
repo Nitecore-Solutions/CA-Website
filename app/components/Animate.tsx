@@ -44,9 +44,12 @@ export function AnimateStagger({ children, className = "", stagger = 0.12, direc
   children: ReactNode[]; className?: string; stagger?: number; direction?: Dir;
 }) {
   const { ref, inView } = useInView();
+  // Filter out any null/undefined children if they exist
+  const validChildren = Array.isArray(children) ? children.filter(Boolean) : [children];
+  
   return (
     <div ref={ref} className={className}>
-      {(children as ReactNode[]).map((child, i) => (
+      {validChildren.map((child, i) => (
         <div key={i} style={{
           opacity: inView ? 1 : 0,
           transform: inView ? "translate(0)" : dirMap[direction],

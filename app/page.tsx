@@ -54,8 +54,8 @@ export default function Home() {
       {/* Top Bar */}
       <div className="bg-blue-900 text-white py-2">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-between items-center text-sm">
-            <div className="flex items-center gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-2 md:gap-0">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
               <a href="tel:+919582549263" className="flex items-center gap-2 hover:text-orange-400 transition">
                 <Phone className="w-4 h-4" /><span>+91-9582549263</span>
               </a>
@@ -74,13 +74,13 @@ export default function Home() {
       <nav className="bg-white shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            <div className="flex items-center gap-3">
-              <div className="w-16 h-16 relative">
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="w-12 h-12 md:w-16 md:h-16 relative flex-shrink-0">
                 <Image src="/CA-India-Logo.png" alt="CA India Logo" width={64} height={64} className="object-contain" />
               </div>
-              <div>
-                <h1 className="text-2xl font-bold text-blue-900">CA Chandan Varshney</h1>
-                <p className="text-sm text-gray-600">Chartered Accountant</p>
+              <div className="min-w-0">
+                <h1 className="text-lg md:text-2xl font-bold text-blue-900 leading-tight truncate">CA Chandan Varshney</h1>
+                <p className="text-xs md:text-sm text-gray-600">Chartered Accountant</p>
               </div>
             </div>
             <div className="hidden md:flex items-center gap-8">
@@ -128,32 +128,32 @@ export default function Home() {
                 </span>
               </Animate>
               <Animate direction="left" delay={0.25}>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
                   Your Trusted Partner for
                   <span className="text-orange-400"> Financial Excellence</span>
                 </h1>
               </Animate>
               <Animate direction="left" delay={0.4}>
-                <p className="text-xl mb-8 text-gray-300">
+                <p className="text-base md:text-xl mb-8 text-gray-300">
                   Professional Chartered Accountant services in Noida. We provide comprehensive tax, audit, and advisory solutions tailored to your business needs.
                 </p>
               </Animate>
               <Animate direction="left" delay={0.55}>
-                <div className="flex flex-wrap gap-4">
-                  <a href="#contact" className="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-semibold text-lg flex items-center gap-2 animate-pulse-glow">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="#contact" className="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-semibold text-lg flex items-center justify-center gap-2 animate-pulse-glow">
                     Schedule Consultation <ChevronRight className="w-5 h-5" />
                   </a>
-                  <a href="#services" className="bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-semibold text-lg">
+                  <a href="#services" className="bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-semibold text-lg flex items-center justify-center">
                     Our Services
                   </a>
                 </div>
               </Animate>
               <Animate direction="up" delay={0.7}>
-                <div className="mt-12 grid grid-cols-4 gap-4">
+                <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {stats.map((stat, i) => (
                     <div key={i} className="text-center">
                       <div className="flex justify-center mb-2 text-orange-400">{stat.icon}</div>
-                      <div className="text-3xl font-bold">
+                      <div className="text-2xl md:text-3xl font-bold">
                         <CountUp target={stat.number} suffix={stat.suffix} />
                       </div>
                       <div className="text-xs text-gray-300">{stat.label}</div>
@@ -196,9 +196,9 @@ export default function Home() {
 
       {/* Marquee strip */}
       <div className="bg-orange-500 text-white py-3 overflow-hidden">
-        <div className="flex gap-12 animate-[marquee_20s_linear_infinite] whitespace-nowrap" style={{animation:"marquee 20s linear infinite"}}>
+        <div className="flex gap-8 md:gap-12 animate-[marquee_20s_linear_infinite] whitespace-nowrap" style={{animation:"marquee 20s linear infinite"}}>
           {["Tax Consultancy","GST Compliance","Audit & Assurance","Financial Advisory","Business Registration","Accounting Services","Tax Consultancy","GST Compliance","Audit & Assurance","Financial Advisory","Business Registration","Accounting Services"].map((t,i) => (
-            <span key={i} className="flex items-center gap-2 font-semibold text-sm">
+            <span key={i} className="flex items-center gap-2 font-semibold text-xs md:text-sm">
               <Star className="w-4 h-4 fill-white" /> {t}
             </span>
           ))}
@@ -209,20 +209,20 @@ export default function Home() {
       <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <Animate direction="left">
-              <div className="relative">
+            <Animate direction="left" className="mb-12 md:mb-0">
+              <div className="relative max-w-lg mx-auto md:max-w-none">
                 <Image
                   src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop"
                   alt="CA Office"
                   width={600} height={400}
-                  className="rounded-2xl shadow-xl object-cover"
+                  className="rounded-2xl shadow-xl object-cover w-full"
                 />
-                <div className="absolute -bottom-8 -right-8 bg-blue-900 text-white rounded-xl p-6 shadow-2xl">
-                  <div className="text-4xl font-bold text-orange-400">15+</div>
-                  <div className="text-sm">Years of Trust</div>
+                <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-blue-900 text-white rounded-xl p-4 md:p-6 shadow-2xl">
+                  <div className="text-2xl md:text-4xl font-bold text-orange-400">15+</div>
+                  <div className="text-xs md:text-sm">Years of Trust</div>
                 </div>
                 {/* Small floating image */}
-                <div className="absolute -top-6 -left-6 w-28 h-28 rounded-xl overflow-hidden shadow-xl border-4 border-white animate-float">
+                <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-20 h-20 md:w-28 md:h-28 rounded-xl overflow-hidden shadow-xl border-4 border-white animate-float">
                   <Image
                     src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=112&h=112&fit=crop"
                     alt="Professional"
@@ -235,7 +235,7 @@ export default function Home() {
             <Animate direction="right">
               <div>
                 <span className="inline-block bg-orange-100 text-orange-600 text-sm font-semibold px-4 py-1 rounded-full mb-4">About Us</span>
-                <h2 className="text-4xl font-bold text-blue-900 mb-6">Welcome to CA Chandan Varshney & Associates</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 mb-6">Welcome to CA Chandan Varshney & Associates</h2>
                 <p className="text-gray-700 mb-4 leading-relaxed">
                   We are a leading Chartered Accountancy firm based in Noida, Uttar Pradesh, committed to delivering expert audit, tax, and advisory services. With years of experience and a team of dedicated professionals, we help businesses achieve financial stability and ensure compliance with evolving regulations.
                 </p>
@@ -261,10 +261,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <Animate direction="up" className="text-center mb-16">
             <span className="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1 rounded-full mb-3">What We Do</span>
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">We offer a comprehensive range of professional services to meet all your financial and compliance needs</p>
           </Animate>
-          <AnimateStagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" stagger={0.1} direction="up">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" stagger={0.1} direction="up">
             {services.map((service, i) => (
               <div key={i} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2">
                 <div className={`${service.color} w-16 h-16 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -286,10 +286,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <Animate direction="up" className="text-center mb-16">
             <span className="inline-block bg-blue-700 text-orange-400 text-sm font-semibold px-4 py-1 rounded-full mb-3">Our Strengths</span>
-            <h2 className="text-4xl font-bold mb-4">Why Choose Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">We combine expertise, dedication, and innovation to deliver exceptional results</p>
           </Animate>
-          <AnimateStagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" stagger={0.12} direction="up">
+          <AnimateStagger className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8" stagger={0.12} direction="up">
             {whyUs.map((item, i) => (
               <div key={i} className="text-center p-6 rounded-xl bg-blue-800 hover:bg-blue-700 transition-all duration-300 hover:-translate-y-2 group">
                 <div className="text-orange-400 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
@@ -305,9 +305,9 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-orange-50 to-blue-50">
         <div className="container mx-auto px-4">
           <Animate direction="up" className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Vision, Mission & Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Vision, Mission & Values</h2>
           </Animate>
-          <AnimateStagger className="grid md:grid-cols-3 gap-8" stagger={0.15} direction="up">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8" stagger={0.15} direction="up">
             {[
               { icon: <TrendingUp className="w-8 h-8" />, color: "bg-blue-600", title: "Our Vision", text: "To be the most trusted and preferred CA firm in North India, known for excellence in service delivery and client satisfaction." },
               { icon: <Award className="w-8 h-8" />, color: "bg-orange-500", title: "Our Mission", text: "To provide comprehensive financial solutions with integrity, professionalism, and innovation, helping our clients achieve their business goals." },
@@ -331,7 +331,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-blue-900 mb-4">Meet the Professionals</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Experienced and dedicated professionals committed to your financial success</p>
           </Animate>
-          <AnimateStagger className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto" stagger={0.15} direction="up">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto" stagger={0.15} direction="up">
             {[
               { name: "CA Chandan Varshney", role: "Founder & Principal CA", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop" },
               { name: "CA Priya Sharma", role: "Tax & Compliance Head", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop" },
@@ -358,13 +358,13 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <Animate direction="left">
-              <h2 className="text-4xl font-bold mb-6">Looking for Accounting & Consulting?</h2>
-              <p className="text-xl text-gray-300 mb-8">Worried about your business compliance? Let us handle your financial matters while you focus on growth.</p>
-              <div className="flex flex-wrap gap-4">
-                <a href="tel:+919582549263" className="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-semibold text-lg flex items-center gap-2 animate-pulse-glow">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Looking for Accounting & Consulting?</h2>
+              <p className="text-base md:text-xl text-gray-300 mb-8">Worried about your business compliance? Let us handle your financial matters while you focus on growth.</p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="tel:+919582549263" className="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-semibold text-lg flex items-center justify-center gap-2 animate-pulse-glow">
                   <Phone className="w-5 h-5" /> Call Now
                 </a>
-                <Link href="#contact" className="bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-semibold text-lg">
+                <Link href="#contact" className="bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-semibold text-lg flex items-center justify-center">
                   Contact Us
                 </Link>
               </div>
@@ -386,9 +386,9 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <Animate direction="up" className="text-center mb-16">
             <span className="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1 rounded-full mb-3">Client Reviews</span>
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">What Our Clients Say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">What Our Clients Say</h2>
           </Animate>
-          <AnimateStagger className="grid md:grid-cols-3 gap-8" stagger={0.15} direction="up">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8" stagger={0.15} direction="up">
             {testimonials.map((t, i) => (
               <div key={i} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative">
                 <div className="absolute top-6 right-6 text-6xl text-orange-100 font-serif leading-none">"</div>
@@ -418,7 +418,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <Animate direction="up" className="text-center mb-16">
             <span className="inline-block bg-orange-100 text-orange-600 text-sm font-semibold px-4 py-1 rounded-full mb-3">FAQ</span>
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Frequently Asked Questions</h2>
           </Animate>
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, i) => (
@@ -444,29 +444,31 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <Animate direction="left">
               <span className="inline-block bg-blue-700 text-orange-400 text-sm font-semibold px-4 py-1 rounded-full mb-4">Get In Touch</span>
-              <h2 className="text-4xl font-bold mb-6">We Are Your Financial Solution</h2>
-              <p className="text-xl mb-8 text-gray-300">Feel free to talk with us. We're here to help your business grow.</p>
-              <div className="space-y-4">
-                <a href="tel:+919582549263" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <span className="text-xl font-semibold hover:text-orange-400 transition">+91-9582549263</span>
-                </a>
-                <a href="tel:+917290000757" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <span className="text-xl font-semibold hover:text-orange-400 transition">+91-7290000757</span>
-                </a>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">We Are Your Financial Solution</h2>
+              <p className="text-lg md:text-xl mb-8 text-gray-300">Feel free to talk with us. We're here to help your business grow.</p>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <a href="tel:+919582549263" className="flex items-center gap-4 group">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <span className="text-lg md:text-xl font-semibold hover:text-orange-400 transition">+91-9582549263</span>
+                  </a>
+                  <a href="tel:+917290000757" className="flex items-center gap-4 group">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <span className="text-lg md:text-xl font-semibold hover:text-orange-400 transition">+91-7290000757</span>
+                  </a>
+                </div>
                 <a href="mailto:cachandanvarshney@gmail.com" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <span className="hover:text-orange-400 transition">cachandanvarshney@gmail.com</span>
+                  <span className="hover:text-orange-400 transition break-all text-sm md:text-base">cachandanvarshney@gmail.com</span>
                 </a>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <span className="text-gray-300 text-sm leading-relaxed">D-118, First Floor, Sector-26, Noida, Gautam Buddha Nagar-201301, Uttar Pradesh, India</span>
@@ -474,13 +476,13 @@ export default function Home() {
               </div>
             </Animate>
             <Animate direction="right">
-              <div className="bg-white rounded-2xl p-8 text-gray-800 shadow-2xl">
+              <div className="bg-white rounded-2xl p-6 md:p-8 text-gray-800 shadow-2xl mt-8 md:mt-0">
                 <h3 className="text-2xl font-bold text-blue-900 mb-6">Send a Message</h3>
                 <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                  <input type="text" placeholder="Your Name" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-400 transition" />
-                  <input type="email" placeholder="Your Email" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-400 transition" />
-                  <input type="tel" placeholder="Phone Number" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-400 transition" />
-                  <textarea rows={4} placeholder="Your Message" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-400 transition resize-none" />
+                  <input type="text" placeholder="Your Name" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-400 transition text-base" />
+                  <input type="email" placeholder="Your Email" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-400 transition text-base" />
+                  <input type="tel" placeholder="Phone Number" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-400 transition text-base" />
+                  <textarea rows={4} placeholder="Your Message" className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-400 transition resize-none text-base" />
                   <button type="submit" className="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition animate-pulse-glow">
                     Send Message
                   </button>
@@ -494,10 +496,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white pt-16 pb-8">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <Animate direction="up" delay={0}>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12">
+                <div className="w-12 h-12 flex-shrink-0">
                   <Image src="/CA-India-Logo.png" alt="CA India Logo" width={48} height={48} className="object-contain" />
                 </div>
                 <div>
@@ -532,16 +534,25 @@ export default function Home() {
                   <MapPin className="w-5 h-5 text-orange-400 flex-shrink-0 mt-1" />
                   <span className="text-gray-400 text-sm">D-118, First Floor, Sector-26, Noida, UP-201301</span>
                 </li>
-                <li className="flex items-center gap-3"><Phone className="w-5 h-5 text-orange-400" /><span className="text-gray-400">+91-9582549263</span></li>
-                <li className="flex items-center gap-3"><Phone className="w-5 h-5 text-orange-400" /><span className="text-gray-400">+91-7290000757</span></li>
-                <li className="flex items-center gap-3"><Mail className="w-5 h-5 text-orange-400" /><span className="text-gray-400 text-sm">cachandanvarshney@gmail.com</span></li>
+                <li className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-orange-400 flex-shrink-0" />
+                  <span className="text-gray-400 text-sm">+91-9582549263</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-orange-400 flex-shrink-0" />
+                  <span className="text-gray-400 text-sm">+91-7290000757</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
+                  <span className="text-gray-400 text-sm break-all">cachandanvarshney@gmail.com</span>
+                </li>
               </ul>
             </Animate>
           </div>
           <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-400 text-sm">© {new Date().getFullYear()} CA Chandan Varshney. All rights reserved.</p>
-              <div className="flex gap-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+              <p className="text-gray-400 text-sm order-2 md:order-1">© {new Date().getFullYear()} CA Chandan Varshney. All rights reserved.</p>
+              <div className="flex gap-4 order-1 md:order-2">
                 {[
                   <svg key="fb" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>,
                   <svg key="tw" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>,

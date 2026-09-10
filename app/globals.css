@@ -19,6 +19,10 @@ body {
   overflow-x: hidden;
 }
 
+/* Ensure tap targets are large enough on mobile */
+a, button { min-height: 44px; }
+nav a, footer a { min-height: unset; }
+
 /* Floating animation for hero elements */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
