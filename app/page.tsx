@@ -22,16 +22,16 @@ export default function Home() {
   ];
 
   const stats = [
-    { number: 15, suffix: "+", label: "Years Experience", icon: <Award className="w-6 h-6" /> },
+    { number: 10, suffix: "+", label: "Years Experience", icon: <Award className="w-6 h-6" /> },
     { number: 500, suffix: "+", label: "Happy Clients", icon: <Users className="w-6 h-6" /> },
     { number: 100, suffix: "%", label: "Client Satisfaction", icon: <Star className="w-6 h-6" /> },
     { number: 24, suffix: "/7", label: "Support Available", icon: <Clock className="w-6 h-6" /> },
   ];
 
   const testimonials = [
-    { name: "Rajesh Kumar", company: "Kumar Enterprises", text: "Exceptional service and professional approach. The team handled our tax matters with great expertise and dedication.", rating: 5 },
-    { name: "Priya Sharma", company: "Sharma & Associates", text: "Highly knowledgeable and responsive. They have been instrumental in streamlining our financial processes.", rating: 5 },
-    { name: "Amit Verma", company: "Verma Industries", text: "Outstanding audit services and valuable business insights. A trusted partner for our financial needs.", rating: 5 },
+    { name: "Amol Yadav", company: "2 months ago", text: "Mr. Chandan is an outstanding CA. He is highly knowledgeable, efficient and makes tax compliance completely stress-free. Highly recommended for anyone looking for a reliable professional.", rating: 5 },
+    { name: "Chetan Bhatt", company: "a year ago", text: "Chandan is highly professional and knowledgeable. He handled my work efficiently, guided me clearly, and made the process smooth. I'd gladly recommend his services.", rating: 5 },
+    { name: "Akash Chowdhry", company: "a year ago", text: "CA Chandan made ITR filing smooth and stress-free. Explained everything clearly, handled details professionally, and ensured timely submission. Excellent service, trustworthy guidance, and hassle-free experience. Highly recommend for reliable tax filing support.", rating: 5 },
   ];
 
   const faqs = [
@@ -42,7 +42,7 @@ export default function Home() {
   ];
 
   const whyUs = [
-    { icon: <Award className="w-12 h-12" />, title: "Expertise & Experience", desc: "Over 15 years of industry experience with qualified professionals" },
+    { icon: <Award className="w-12 h-12" />, title: "Expertise & Experience", desc: "Over 10 years of industry experience with qualified professionals" },
     { icon: <Shield className="w-12 h-12" />, title: "Commitment to Excellence", desc: "Dedicated to delivering high-quality service and accuracy" },
     { icon: <Users className="w-12 h-12" />, title: "Client-Centric Approach", desc: "Personalized solutions tailored to your specific needs" },
     { icon: <Clock className="w-12 h-12" />, title: "Timely Delivery", desc: "We value your time and ensure on-time service delivery" },
@@ -122,11 +122,6 @@ export default function Home() {
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <Animate direction="left" delay={0.1}>
-                <span className="inline-block bg-orange-500 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4">
-                  Trusted CA Firm in Noida
-                </span>
-              </Animate>
               <Animate direction="left" delay={0.25}>
                 <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
                   Your Trusted Partner for
@@ -184,7 +179,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="absolute -top-6 -right-6 bg-orange-500 text-white rounded-xl shadow-xl p-4 z-20 animate-float" style={{animationDelay:"2s"}}>
-                  <div className="font-bold text-lg">15+</div>
+                  <div className="font-bold text-lg">10+</div>
                   <div className="text-xs">Years of Excellence</div>
                 </div>
               </div>
@@ -198,9 +193,9 @@ export default function Home() {
       <div className="bg-orange-500 text-white py-3 overflow-hidden">
         <div className="flex gap-8 md:gap-12 animate-[marquee_20s_linear_infinite] whitespace-nowrap" style={{animation:"marquee 20s linear infinite"}}>
           {["Tax Consultancy","GST Compliance","Audit & Assurance","Financial Advisory","Business Registration","Accounting Services","Tax Consultancy","GST Compliance","Audit & Assurance","Financial Advisory","Business Registration","Accounting Services"].map((t,i) => (
-            <span key={i} className="flex items-center gap-2 font-semibold text-xs md:text-sm">
+            <a key={i} href="#services" className="flex items-center gap-2 font-semibold text-xs md:text-sm hover:text-orange-200 transition cursor-pointer">
               <Star className="w-4 h-4 fill-white" /> {t}
-            </span>
+            </a>
           ))}
         </div>
       </div>
@@ -218,7 +213,7 @@ export default function Home() {
                   className="rounded-2xl shadow-xl object-cover w-full"
                 />
                 <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-blue-900 text-white rounded-xl p-4 md:p-6 shadow-2xl">
-                  <div className="text-2xl md:text-4xl font-bold text-orange-400">15+</div>
+                  <div className="text-2xl md:text-4xl font-bold text-orange-400">10+</div>
                   <div className="text-xs md:text-sm">Years of Trust</div>
                 </div>
                 {/* Small floating image */}
@@ -237,7 +232,7 @@ export default function Home() {
                 <span className="inline-block bg-orange-100 text-orange-600 text-sm font-semibold px-4 py-1 rounded-full mb-4">About Us</span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 mb-6">Welcome to CA Chandan Varshney & Associates</h2>
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  We are a leading Chartered Accountancy firm based in Noida, Uttar Pradesh, committed to delivering expert audit, tax, and advisory services. With years of experience and a team of dedicated professionals, we help businesses achieve financial stability and ensure compliance with evolving regulations.
+                  We are a leading Chartered Accountancy firm based in Noida, Uttar Pradesh, committed to delivering expert audit, tax, and advisory services. With 10+ years of experience and a team of dedicated professionals, we help businesses achieve financial stability and ensure compliance with evolving regulations.
                 </p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   Our firm combines technical expertise with personalized service, enabling us to understand your unique needs and provide tailored solutions that drive growth and success.
@@ -333,7 +328,7 @@ export default function Home() {
           </Animate>
           <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto" stagger={0.15} direction="up">
             {[
-              { name: "CA Chandan Varshney", role: "Founder & Principal CA", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop" },
+              { name: "CA Chandan Varshney", role: "Founder", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop" },
               { name: "CA Priya Sharma", role: "Tax & Compliance Head", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop" },
               { name: "CA Rahul Gupta", role: "Audit & Assurance Lead", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" },
             ].map((member, i) => (
@@ -552,6 +547,7 @@ export default function Home() {
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
               <p className="text-gray-400 text-sm order-2 md:order-1">© {new Date().getFullYear()} CA Chandan Varshney. All rights reserved.</p>
+              <p className="text-gray-500 text-xs md:text-sm text-center md:text-left order-3 md:order-3">This website is made by <span className="text-white font-medium">Nitecore Solutions Pvt. Ltd.</span> For further information visit <a href="https://www.nitecoresolutions.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 transition">https://www.nitecoresolutions.com/</a></p>
               <div className="flex gap-4 order-1 md:order-2">
                 {[
                   <svg key="fb" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>,
