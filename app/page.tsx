@@ -49,7 +49,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
 
       {/* Top Bar */}
       <div className="bg-blue-900 text-white py-2">
@@ -115,9 +115,9 @@ export default function Home() {
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden min-h-[70vh] md:min-h-[90vh] flex items-center">
         {/* Animated background circles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-700 rounded-full opacity-20 animate-float" style={{animationDelay:"0s"}} />
-          <div className="absolute top-1/2 -right-32 w-80 h-80 bg-orange-500 rounded-full opacity-10 animate-float" style={{animationDelay:"1.5s"}} />
-          <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-blue-500 rounded-full opacity-15 animate-float" style={{animationDelay:"3s"}} />
+          <div className="absolute -top-20 -left-20 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-700 rounded-full opacity-20 animate-float" style={{animationDelay:"0s"}} />
+          <div className="absolute top-1/2 -right-20 sm:-right-32 w-64 h-64 sm:w-80 sm:h-80 bg-orange-500 rounded-full opacity-10 animate-float" style={{animationDelay:"1.5s"}} />
+          <div className="absolute bottom-0 left-1/4 sm:left-1/3 w-48 h-48 sm:w-64 sm:h-64 bg-blue-500 rounded-full opacity-15 animate-float" style={{animationDelay:"3s"}} />
         </div>
         <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
